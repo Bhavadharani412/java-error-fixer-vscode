@@ -1,0 +1,39 @@
+{
+  "name": "java-error-fixer",
+  "displayName": "Java Error Fixer",
+  "description": "Reads Java documentation and suggests fixes for errors",
+  "version": "0.1.0",
+  "publisher": "errorFixer",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onLanguage:java"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Java Error Fixer",
+      "properties": {
+        "javaErrorFixer.enableHoverFix": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover suggestions for Java errors"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0"
+  }
+}
